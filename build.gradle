@@ -1,17 +1,24 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
 plugins {
     id 'java'
 }
-
 group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compile "org.apache.spark:spark-core_2.11:2.3.1"
+    compile "org.apache.spark:spark-sql_2.11:2.3.1"
 }
 
 test {
